@@ -1,10 +1,12 @@
 import React from 'react'
 
-export default function Current() {
-  return (
-    <div className='Current'>
+export default function Current(props) {
+    const { notes, current } = props;
 
-    </div>
-  )
+    return (
+        <div className='Current'>
+            <h3>{notes[current]}</h3>
+        </div>
+    )
 }
 
