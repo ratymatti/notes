@@ -3,40 +3,44 @@ import './Current.css';
 import EditInput from '../EditInput/EditInput';
 
 export default function Current(props) {
-    const { notes, current, editNote } = props;
+    const { notes, current, editNote, editTitle } = props;
 
-    const [content, setContent] = useState();
+    const [selected, setSelected] = useState('');
 
-    function handleContentChange(e) {
-        setContent(e.target.value);
+    function handleContentSubmit(content) {
+    
+        const currentNote = notes[current];
+        const editedNote = {
+            title: currentNote.title,
+            content: content
+        };
+        editNote(editedNote);       
+        setSelected('');
     }
 
-    function handleInputSubmit(e) {
-        if (e.key === 'Enter') {
-            const currentNote = notes[current];
-            const editedNote = {
-                title: currentNote.title,
-                content: content
-            };
-            editNote(editedNote);       
-        }  
+    function handleTitleSubmit(title) {
+        const currentNote = notes[current];
+        const editedNote = {
+            title: title,
+            content: currentNote.content
+        };
+        editTitle(editedNote);
+        setSelected('');
     }
-
-        return (
-            <div className='Current'>
-                <div className='options'></div>
-                <h3>{notes[current].title}</h3>
-                { notes[current].content ? 
-                    <p>{notes[current].content}</p>
-
-                : <input
-                    type='text'
-                    placeholder='type here'
-                    onKeyDown={handleInputSubmit}
-                    onChange={handleContentChange}></input>}
-            </div>
-        )
-     
-        
+    
+    return (
+        <div className='Current'>
+            <div className='options'></div>
+            {selected !== 'title' ?
+                <h3 onClick={() => setSelected('title')}>{notes[current].title}</h3>
+            :   <EditInput
+                    handleSubmit={handleTitleSubmit} /> }
+            {selected !== 'content' ? 
+                <p onClick={() => setSelected('content')}>{notes[current].content ? notes[current].content : 'add content'}</p>
+            :   <EditInput
+                    handleSubmit={handleContentSubmit} /> }
+        </div>
+    )
+               
 }
 

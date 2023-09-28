@@ -19,6 +19,12 @@ function App() {
     setNotes([...currentNotes]);
   }
 
+  function editTitle(note) {
+    const currentNotes = [...notes];
+    currentNotes[current] = note;
+    setNotes([...currentNotes]);
+  }
+
   return (
     <div className="App">
       <div className='notes'>
@@ -32,7 +38,8 @@ function App() {
         <Current
           notes={notes}
           current={current}
-          editNote={editNote} />
+          editNote={editNote}
+          editTitle={editTitle} />
       </div>
 
     </div>
