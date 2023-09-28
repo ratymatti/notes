@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import AddNote from '../AddNote/AddNote';
 
 export default function Notes(props) {
     const { notes, setCurrent } = props;
@@ -16,7 +17,7 @@ export default function Notes(props) {
                         key={index}>{note}</h3>
                 ))
             }
-            <input type='text' placeholder='+ new note'></input>
+            <AddNote />
         </div>
     )
 }
