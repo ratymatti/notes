@@ -7,13 +7,20 @@ function App() {
   const [notes, setNotes] = useState(['note 1', 'note 2', 'note 3']);
   const [current, setCurrent] = useState();
 
+  function addNewNote(note) {
+    const currentNotes = notes;
+    setNotes([...currentNotes, note]);
+    setCurrent(notes.length);
+  }
+
   return (
     <div className="App">
       <div className='notes'>
         <h1>Notes</h1>
         <Notes
           setCurrent={setCurrent}
-          notes={notes}/>
+          notes={notes}
+          addNewNote={addNewNote} />
       </div>
       <div className='current'>
         <Current

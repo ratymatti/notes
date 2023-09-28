@@ -2,7 +2,7 @@ import React from 'react';
 import AddNote from '../AddNote/AddNote';
 
 export default function Notes(props) {
-    const { notes, setCurrent } = props;
+    const { notes, setCurrent, addNewNote } = props;
     
     function handleClick(id) {
         setCurrent(id);
@@ -17,7 +17,8 @@ export default function Notes(props) {
                         key={index}>{note}</h3>
                 ))
             }
-            <AddNote />
+            <AddNote
+                addNewNote={addNewNote} />
         </div>
     )
 }
