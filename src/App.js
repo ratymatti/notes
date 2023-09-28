@@ -4,13 +4,18 @@ import Notes from './components/Notes/Notes';
 import Current from './components/Current/Current';
 
 function App() {
-  const [notes, setNotes] = useState(['note 1', 'note 2', 'note 3']);
-  const [current, setCurrent] = useState();
+  const [notes, setNotes] = useState([{title: 'note1', content: 'note1 text'}, {title: 'note2', content: 'note2 text'}, {title: 'note3', content: 'note3 text'}]);
+  const [current, setCurrent] = useState(0);
 
   function addNewNote(note) {
     const currentNotes = notes;
     setNotes([...currentNotes, note]);
     setCurrent(notes.length);
+  }
+
+  function editNote(note) {
+    const currentNotes = notes;
+    setNotes([...currentNotes, note]);
   }
 
   return (
@@ -25,7 +30,8 @@ function App() {
       <div className='current'>
         <Current
           notes={notes}
-          current={current} />
+          current={current}
+          editNote={editNote} />
       </div>
 
     </div>

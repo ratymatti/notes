@@ -17,7 +17,7 @@ export default function AddNote(props) {
 
     function handleInputSubmit(e) {
         if (e.key === 'Enter') {
-            addNewNote(text);
+            addNewNote({title: text, content: ''});
             setIsClicked(false);
             setText('Add new note');
         }

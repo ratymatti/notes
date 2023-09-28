@@ -1,1 +1,5 @@
-
+.options {
+    border: 1px solid greenyellow;
+    height: 20px;
+    margin-top: 10px;   
+}

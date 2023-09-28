@@ -14,7 +14,7 @@ export default function Notes(props) {
                 notes.map((note, index) => (
                     <h3 
                         onClick={() => handleClick(index)}
-                        key={index}>{note}</h3>
+                        key={index}>{note.title}</h3>
                 ))
             }
             <AddNote
