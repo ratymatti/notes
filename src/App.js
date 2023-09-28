@@ -14,8 +14,9 @@ function App() {
   }
 
   function editNote(note) {
-    const currentNotes = notes;
-    setNotes([...currentNotes, note]);
+    const currentNotes = [...notes];
+    currentNotes[current] = note;
+    setNotes([...currentNotes]);
   }
 
   return (
