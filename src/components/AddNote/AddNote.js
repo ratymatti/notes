@@ -15,21 +15,25 @@ export default function AddNote(props) {
         setText(e.target.value);
     }
 
-    function handleInputSubmit() {
-        addNewNote(text);
-        setIsClicked(false);
+    function handleInputSubmit(e) {
+        if (e.key === 'Enter') {
+            addNewNote(text);
+            setIsClicked(false);
+            setText('Add new note');
+        }
     }
 
     return (
         <div className='AddNote'>
             { isClicked ?
-                <div>
+                <div className='input'>
                     <input
                     type='text'
                     placeholder={text}
-                    onChange={handleInputChange} >
-                </input>
-                <button onClick={handleInputSubmit}>Add</button>    
+                    onChange={handleInputChange}
+                    onKeyDown={handleInputSubmit} >
+                    </input>
+                    <button onClick={() => setIsClicked(false)}>close</button>
                 </div>  
                 
 
