@@ -28,10 +28,10 @@ export default function AddNote(props) {
             { isClicked ?
                 <div className='input'>
                     <input
-                    type='text'
-                    placeholder={text}
-                    onChange={handleInputChange}
-                    onKeyDown={handleInputSubmit} >
+                        type='text'
+                        placeholder={text}
+                        onChange={handleInputChange}
+                        onKeyDown={handleInputSubmit} >
                     </input>
                     <button onClick={() => setIsClicked(false)}>close</button>
                 </div>  
