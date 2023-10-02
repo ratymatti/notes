@@ -5,7 +5,7 @@ export default function AddNote(props) {
     const { addNewNote } = props;
 
     const [isClicked, setIsClicked] = useState(false);
-    const [text, setText] = useState('Add new note');
+    const [text, setText] = useState('');
 
     function handleClick() {
         setIsClicked(true);
@@ -29,7 +29,7 @@ export default function AddNote(props) {
                 <div className='input'>
                     <input
                         type='text'
-                        placeholder={text}
+                        placeholder='Add new note'
                         onChange={handleInputChange}
                         onKeyDown={handleInputSubmit} >
                     </input>

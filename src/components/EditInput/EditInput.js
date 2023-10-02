@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 export default function EditInput(props) {
     const { handleSubmit } = props;
 
-    const [content, setContent] = useState();
+    const [content, setContent] = useState('');
 
     function handleContentChange(e) {
         setContent(e.target.value);

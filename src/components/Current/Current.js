@@ -36,7 +36,7 @@ export default function Current(props) {
             :   <EditInput
                     handleSubmit={handleTitleSubmit} /> }
             {selected !== 'content' ? 
-                <p onClick={() => setSelected('content')}>{notes[current].content ? notes[current].content : 'add content'}</p>
+                <p onClick={() => setSelected('content')}>{notes[current].content ? notes[current].content : 'click here to type...'}</p>
             :   <EditInput
                     handleSubmit={handleContentSubmit} /> }
         </div>
