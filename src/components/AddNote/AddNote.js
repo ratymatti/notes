@@ -1,8 +1,8 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function AddNote(props) {
-    const { addNewNote } = props;
+    const { addNewNote, current } = props;
 
     const [isClicked, setIsClicked] = useState(false);
     const [text, setText] = useState('');
@@ -22,6 +22,11 @@ export default function AddNote(props) {
             setText('Add new note');
         }
     }
+
+    useEffect(() => {
+        setIsClicked(false);
+    },[current]);
+
 
     return (
         <div className='AddNote'>

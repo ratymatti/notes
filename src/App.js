@@ -32,7 +32,8 @@ function App() {
         <Notes
           setCurrent={setCurrent}
           notes={notes}
-          addNewNote={addNewNote} />
+          addNewNote={addNewNote}
+          current={current} />
       </div>
       <div className='current'>
         <Current

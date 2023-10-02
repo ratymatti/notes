@@ -2,7 +2,7 @@ import React from 'react';
 import AddNote from '../AddNote/AddNote';
 
 export default function Notes(props) {
-    const { notes, setCurrent, addNewNote } = props;
+    const { notes, setCurrent, addNewNote, current } = props;
     
     function handleClick(id) {
         setCurrent(id);
@@ -18,7 +18,8 @@ export default function Notes(props) {
                 ))
             }
             <AddNote
-                addNewNote={addNewNote} />
+                addNewNote={addNewNote}
+                current={current} />
         </div>
     )
 }
