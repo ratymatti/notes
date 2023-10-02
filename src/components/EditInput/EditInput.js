@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 
 export default function EditInput(props) {
-    const { handleSubmit } = props;
+    const { handleSubmit, currentValue } = props;
 
-    const [content, setContent] = useState('');
+    const [content, setContent] = useState(currentValue);
 
     function handleContentChange(e) {
         setContent(e.target.value);
@@ -19,7 +19,7 @@ export default function EditInput(props) {
         <div className='EditInput'>
             <input
                 type='text'
-                placeholder='placeholder'
+                value={content}
                 onChange={handleContentChange}
                 onKeyDown={handleContentSubmit} >
             </input>
