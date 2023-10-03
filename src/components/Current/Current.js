@@ -37,14 +37,15 @@ export default function Current(props) {
             <div className='options'></div>
             {activeInput === 'title' ?
                 <EditInput
-                handleSubmit={handleTitleSubmit}
-                currentValue={notes[current].title} />
+                    handleSubmit={handleTitleSubmit}
+                    currentValue={notes[current].title} />
                 
             :   <h3 onClick={() => setActiveInput('title')}>{notes[current].title}</h3> }
             {activeInput === 'content' ?
                 <EditInput
-                handleSubmit={handleContentSubmit}
-                currentValue={notes[current].content} /> 
+                    handleSubmit={handleContentSubmit}
+                    currentValue={notes[current].content}
+                    activeInput={activeInput} /> 
             :   <p onClick={() => setActiveInput('content')}>{notes[current].content ? notes[current].content : 'click here to type...'}</p> }
         </div>
     )

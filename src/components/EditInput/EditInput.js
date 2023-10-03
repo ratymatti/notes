@@ -1,7 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 export default function EditInput(props) {
-  const { handleSubmit, currentValue } = props;
+  const {  
+            handleSubmit,
+            currentValue,
+            activeInput
+        } = props;
 
   const [content, setContent] = useState(currentValue);
   const inputRef = useRef(null);
@@ -23,13 +27,21 @@ export default function EditInput(props) {
 
   return (
     <div className='EditInput'>
-      <input
-        type='text'
-        value={content}
-        onChange={handleContentChange}
-        onKeyDown={handleContentSubmit}
-        ref={inputRef}
-      />
+      { activeInput === 'content' ?
+            <textarea   
+                ref={inputRef}
+                value={content}
+                onChange={handleContentChange}
+                onKeyDown={handleContentSubmit}
+                rows={7}
+                cols={50} ></textarea>
+        : <input
+            type='text'
+            value={content}
+            onChange={handleContentChange}
+            onKeyDown={handleContentSubmit}
+            ref={inputRef} />
+      }
     </div>
   );
 }
