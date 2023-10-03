@@ -22,7 +22,7 @@ export default function Notes(props) {
                 notes.map((note, index) => (
                     <h3 
                         onClick={() => handleClick(index)}
-                        key={index}>{note.title}</h3>
+                        key={index}>{ note.title.length > 20 ? note.title.slice(0, 20) + '...' : note.title }</h3>
                 ))
             }
             <AddNote
