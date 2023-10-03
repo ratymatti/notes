@@ -6,6 +6,11 @@ import Current from './components/Current/Current';
 function App() {
   const [notes, setNotes] = useState([{title: 'note1', content: 'note1 text'}, {title: 'note2', content: 'note2 text'}, {title: 'note3', content: 'note3 text'}]);
   const [current, setCurrent] = useState(0);
+  const [activeInput, setActiveInput] = useState('');
+
+  function changeActiveInput(input) {
+    setActiveInput(input);  
+  };
 
   function addNewNote(note) {
     const currentNotes = notes;
@@ -33,14 +38,18 @@ function App() {
           setCurrent={setCurrent}
           notes={notes}
           addNewNote={addNewNote}
-          current={current} />
+          current={current}
+          activeInput={activeInput}
+          setActiveInput={setActiveInput} />
       </div>
       <div className='current'>
         <Current
           notes={notes}
           current={current}
           editNote={editNote}
-          editTitle={editTitle} />
+          editTitle={editTitle}
+          activeInput={activeInput}
+          setActiveInput={setActiveInput} />
       </div>
 
     </div>
