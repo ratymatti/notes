@@ -43,13 +43,14 @@ function App() {
           setActiveInput={setActiveInput} />
       </div>
       <div className='current'>
-        <Current
-          notes={notes}
-          current={current}
-          editNote={editNote}
-          editTitle={editTitle}
-          activeInput={activeInput}
-          setActiveInput={setActiveInput} />
+        {notes.length ? <Current
+                            notes={notes}
+                            current={current}
+                            editNote={editNote}
+                            editTitle={editTitle}
+                            activeInput={activeInput}
+                            setActiveInput={setActiveInput} /> : <p>You haven't added any notes yet</p> }
+        
       </div>
 
     </div>
