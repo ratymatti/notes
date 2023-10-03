@@ -1,1 +1,19 @@
+.EditInput textarea:hover {
+    cursor: pointer;
+    border: 1px solid orange;
+}
 
+.EditInput textarea:focus {
+    border: 1px solid orange;
+    outline: none;
+}
+
+.EditInput textarea {
+    padding: 5px;
+    outline: none;
+}
+
+.EditInput input:focus {
+    outline: none;
+    border: 1px solid orange;     
+}

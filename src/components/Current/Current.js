@@ -1,6 +1,7 @@
 import React from 'react'
 import './Current.css';
 import EditInput from '../EditInput/EditInput';
+import './Current.css';
 
 export default function Current(props) {
     const { 
@@ -35,20 +36,20 @@ export default function Current(props) {
     }
 
     return (
-        <div className='Current'>
-            <p>{notes[current].date}</p>
+        <div id='current-note'>
+            <p id='current-note-date'>{notes[current].date}</p>
             {activeInput === 'title' ?
                 <EditInput
                     handleSubmit={handleTitleSubmit}
                     currentValue={notes[current].title} />
                 
-            :   <h3 onClick={() => setActiveInput('title')}>{notes[current].title}</h3> } 
+            :   <h3 id='current-note-title' onClick={() => setActiveInput('title')}>{notes[current].title}</h3> } 
             {activeInput === 'content' ?
                 <EditInput
                     handleSubmit={handleContentSubmit}
                     currentValue={notes[current].content}
                     activeInput={activeInput} /> 
-            :   <p onClick={() => setActiveInput('content')}>{notes[current].content ? notes[current].content : 'click here to type...'}</p> }
+            :   <p id='content' onClick={() => setActiveInput('content')}>{notes[current].content ? notes[current].content : 'click here to type...'}</p> }
         </div>
     )
                

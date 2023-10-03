@@ -1,11 +1,19 @@
-.current p {
+#current-note-date {
     font-size: 12px;
 }
 
-.current {
-    background-color: aqua;
+#current-note-title {
+    font-size: 22px;
 }
 
-.current textarea {
-    background-color: aqua;
+#current-note-title:hover {
+    cursor: pointer;
+    color: orange;
 }
+
+#content:hover {
+    cursor: pointer;
+    color: orange;
+}
+
+

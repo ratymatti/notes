@@ -4,7 +4,7 @@ import Notes from './components/Notes/Notes';
 import Current from './components/Current/Current';
 
 function App() {
-  const [notes, setNotes] = useState([{title: 'note1', content: 'note1 text'}, {title: 'note2', content: 'note2 text'}, {title: 'note3', content: 'note3 text'}]);
+  const [notes, setNotes] = useState([{title: 'note1', content: 'note1 text', date: "03-10-2023 14:52:55"}, {title: 'note2', content: 'note2 text', date: "03-10-2023 14:55:45"}, {title: 'note3', content: 'note3 text', date: "03-10-2023 14:55:15"}]);
   const [current, setCurrent] = useState(0);
   const [activeInput, setActiveInput] = useState('');
 

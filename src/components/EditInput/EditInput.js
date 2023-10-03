@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import './EditInput.css';
 
 export default function EditInput(props) {
   const {  
