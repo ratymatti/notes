@@ -12,21 +12,23 @@ export default function Current(props) {
             setActiveInput
         } = props;
 
-    function handleContentSubmit(content) {
+    function handleContentSubmit(content, dateString) {
         const currentNote = notes[current];
         const editedNote = {
             title: currentNote.title,
-            content: content
+            content: content,
+            date: dateString
         };
         editNote(editedNote);
         setActiveInput('');       
     }
 
-    function handleTitleSubmit(title) {
+    function handleTitleSubmit(title, dateString) {
         const currentNote = notes[current];
         const editedNote = {
             title: title,
-            content: currentNote.content
+            content: currentNote.content,
+            date: dateString
         };
         editTitle(editedNote);
         setActiveInput(''); 
@@ -34,13 +36,13 @@ export default function Current(props) {
 
     return (
         <div className='Current'>
-            <div className='options'></div>
+            <p>{notes[current].date}</p>
             {activeInput === 'title' ?
                 <EditInput
                     handleSubmit={handleTitleSubmit}
                     currentValue={notes[current].title} />
                 
-            :   <h3 onClick={() => setActiveInput('title')}>{notes[current].title}</h3> }
+            :   <h3 onClick={() => setActiveInput('title')}>{notes[current].title}</h3> } 
             {activeInput === 'content' ?
                 <EditInput
                     handleSubmit={handleContentSubmit}

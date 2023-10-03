@@ -32,7 +32,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className='notes'>
+      <div className='notes-container'>
         <h1>Notes</h1>
         <Notes
           setCurrent={setCurrent}

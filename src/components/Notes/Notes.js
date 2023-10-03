@@ -1,5 +1,6 @@
 import React from 'react';
 import AddNote from '../AddNote/AddNote';
+import './Notes.css'
 
 export default function Notes(props) {
     const { 
@@ -17,12 +18,14 @@ export default function Notes(props) {
     }
 
     return (
-        <div className='Notes'>
+        <div className='notes'>
             {
                 notes.map((note, index) => (
-                    <h3 
-                        onClick={() => handleClick(index)}
-                        key={index}>{ note.title.length > 20 ? note.title.slice(0, 20) + '...' : note.title }</h3>
+                    <div className='note' key={index}>
+                        <h3 
+                        onClick={() => handleClick(index)} > { note.title.length > 20 ? note.title.slice(0, 20) + '...' : note.title }</h3>
+                        <p>{note.date}</p>      
+                    </div>
                 ))
             }
             <AddNote

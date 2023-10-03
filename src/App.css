@@ -5,7 +5,7 @@
   grid-template-columns: 1fr 2fr; 
 }
 
-.notes {
+.notes-container {
   border: 1px solid red;
 }
 
