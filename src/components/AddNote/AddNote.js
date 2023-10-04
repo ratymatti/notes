@@ -11,19 +11,19 @@ export default function AddNote(props) {
             setActiveInput
         } = props;
 
+    const newValue = '';    
+
     function handleInputSubmit(content, dateString) {
         addNewNote({ title: content, content: '', date: dateString });
     }
           
-          
-
     useEffect(() => {
         setActiveInput('');
     },[current]);
 
     return (
         <div className='add-note'>
-            { activeInput === 'new' ? <EditInput handleSubmit={handleInputSubmit} /> : <h3 onClick={() => setActiveInput('new')}>+ New Note</h3> }
+            { activeInput === 'new' ? <EditInput handleSubmit={handleInputSubmit} currentValue={newValue} /> : <h3 onClick={() => setActiveInput('new')}>+ New Note</h3> }
         </div> 
     )
 }

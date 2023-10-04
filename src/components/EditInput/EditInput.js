@@ -33,9 +33,11 @@ export default function EditInput(props) {
   }
 
   function handleContentSubmit(e) {
-    if (e.key === 'Enter') {
-      const dateString = getDate()
-      handleSubmit(content, dateString);
+    if (content.length) {
+      if (e.key === 'Enter') {
+        const dateString = getDate()
+        handleSubmit(content, dateString);
+      }
     }
   }
 
