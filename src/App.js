@@ -16,6 +16,7 @@ function App() {
     const currentNotes = notes;
     setNotes([...currentNotes, note]);
     setCurrent(notes.length);
+    setActiveInput('');
   }
 
   function editNote(note) {
@@ -29,6 +30,19 @@ function App() {
     currentNotes[current] = note;
     setNotes([...currentNotes]);
   }
+
+  function deleteNote(noteToDelete) {
+    const newNotes = notes.filter((note, index) => index !== noteToDelete);
+  
+    if (noteToDelete > 0) {
+      setCurrent(noteToDelete - 1);
+    } else {
+      setCurrent(0);
+    }
+  
+    setNotes([...newNotes]);
+  }
+  
 
   return (
     <div className="App">
@@ -49,7 +63,8 @@ function App() {
                             editNote={editNote}
                             editTitle={editTitle}
                             activeInput={activeInput}
-                            setActiveInput={setActiveInput} /> : <p>You haven't added any notes yet</p> }
+                            setActiveInput={setActiveInput}
+                            deleteNote={deleteNote} /> : <p>You haven't added any notes yet</p> }
         
       </div>
 

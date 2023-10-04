@@ -10,7 +10,8 @@ export default function Current(props) {
             editNote,
             editTitle,
             activeInput,
-            setActiveInput
+            setActiveInput,
+            deleteNote
         } = props;
 
     function handleContentSubmit(content, dateString) {
@@ -37,6 +38,9 @@ export default function Current(props) {
 
     return (
         <div id='current-note'>
+            <div className='options'>
+            <button onClick={() => deleteNote(current)}>delete note</button>
+            </div>
             <p id='current-note-date'>{notes[current].date}</p>
             {activeInput === 'title' ?
                 <EditInput

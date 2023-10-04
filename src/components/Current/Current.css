@@ -16,4 +16,20 @@
     color: orange;
 }
 
+.options {
+    display: flex;
+    justify-content: end;
+}
+
+.options button {
+    color: black;
+    background-color: white;
+    border: 1px solid orange;
+    border-radius: 5px;
+}
+
+.options button:hover {
+    cursor: pointer;
+    background-color: orange;
+}
 
