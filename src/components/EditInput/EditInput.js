@@ -34,7 +34,6 @@ export default function EditInput(props) {
 
   function handleContentSubmit(e) {
     if (e.key === 'Enter') {
-      console.log('i tried to happen')
       const trimmedContent = content.trim();
       if (trimmedContent.length) {
         const dateString = getDate()
