@@ -46,6 +46,7 @@ export default function EditInput(props) {
                 onKeyDown={handleContentSubmit}
                 rows={7}
                 cols={50} ></textarea>
+              
         : <input
             type='text'
             value={content}
