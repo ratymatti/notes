@@ -27,14 +27,4 @@
 .textarea button {
     width: 50px;
     margin-top: 10px;
-    border: 1px solid orange;
-    border-radius: 5px;
-    background-color: white;
-}
-
-.textarea button:hover {
-    cursor: pointer;
-    background-color: orange;
-    color: white;
-    border: 0px;
 }

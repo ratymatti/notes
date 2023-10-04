@@ -19,3 +19,11 @@
     cursor: pointer;
     color: orange;
 }
+
+.add-note {
+    display: inline-block;
+}
+
+.add-note button {
+    height: 20px;
+}

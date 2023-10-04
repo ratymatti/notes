@@ -28,11 +28,14 @@ export default function Notes(props) {
                     </div>
                 ))
             }
-            <AddNote
-                addNewNote={addNewNote}
-                current={current}
-                activeInput={activeInput}
-                setActiveInput={setActiveInput} />
+            <div className='add-note'>
+                <AddNote
+                    addNewNote={addNewNote}
+                    current={current}
+                    activeInput={activeInput}
+                    setActiveInput={setActiveInput} />
+                {activeInput === 'new' && <button onClick={() => setActiveInput('')}>close</button>  } 
+            </div>  
         </div>
     )
 }

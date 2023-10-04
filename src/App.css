@@ -9,3 +9,15 @@
   border-left: 1px solid black;
   padding: 15px;
 }
+
+button {
+  background-color: white;
+  border: 1px solid orange;
+  border-radius: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: orange;
+  border: 0px;
+}
