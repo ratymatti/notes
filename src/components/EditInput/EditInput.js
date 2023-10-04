@@ -33,7 +33,8 @@ export default function EditInput(props) {
   }
 
   function handleContentSubmit(e) {
-    if (content.length) {
+    const trimmedContent = content.trim(); 
+    if (trimmedContent.length) {
       if (e.key === 'Enter') {
         const dateString = getDate()
         handleSubmit(content, dateString);
@@ -42,8 +43,11 @@ export default function EditInput(props) {
   }
 
   function handleSave() {
-    const dateString = getDate();
-    handleSubmit(content, dateString);
+    const trimmedContent = content.trim(); 
+    if (trimmedContent.length) {
+      const dateString = getDate();
+      handleSubmit(content, dateString);
+    }
   }
 
   return (
